@@ -11,7 +11,7 @@ public:
     Device(const string & name);
     const string & getName() const;
 
-private:
+protected:
     string _name;
 };
 

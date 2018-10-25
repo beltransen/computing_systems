@@ -8,7 +8,7 @@
 class Processor : public Device
 {
 public:
-    Processor(const string & name) : Device(name){}
+    Processor(const string & name);
     void process(const string & data);
     void connectTo(Display & display);
 private:

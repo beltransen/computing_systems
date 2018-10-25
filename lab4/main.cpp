@@ -14,16 +14,31 @@ int main()
     LineKeyboard lk("Kinesis");
     CharKeyboard ck("Logitech");
 
-    // Connections (2 keyboards to same processor)
-    p.connectTo(d); // Connect the Processor to the Display
+
+    // Test system
+    cout << "Testing keyboards before being connected" << endl;
+    lk.process(); // Process one line of input
+    ck.process(); // Process one character
+
+    // Connect  keyboards to processor (both keyboards to the same processor)
     lk.connectTo(p); // Connect the LineKeyboard to the Processor
     ck.connectTo(p); // Connect the CharKeyboard to the Processor
 
-    // Usage
+    // Test system
+    cout << endl << "Testing system... (display not connected yet)" << endl;
+    lk.process(); // Process one line of input
+    ck.process(); // Process one character
+
+    // Connect CPU to display
+    p.connectTo(d); // Connect the Processor to the Display
+
+    // Test system (everything is connected now)
+    cout << endl << "Testing system... (all devices connected)" << endl;
     lk.process(); // Process one line of input
     ck.process(); // Process one character
 
     // Print devices names
+    cout << endl << "List of system components:" << endl;
     cout << "Display: " << d.getName() << endl;
     cout << "Processor: " << p.getName() << endl;
     cout << "LineKeyboard: " << lk.getName() << endl;

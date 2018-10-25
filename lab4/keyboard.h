@@ -8,7 +8,7 @@
 class Keyboard : public Device
 {
 public:
-    Keyboard(const string & name) : Device(name){}
+    Keyboard(const string & name);
     void process();
     void connectTo(Processor & cpu);
 protected:
